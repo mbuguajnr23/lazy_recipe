@@ -17,21 +17,22 @@ api_key = os.getenv('API_KEY')
 def index():
 
     #get the list of ingredients from the session (or initialize it)
+    return render_template('index.html', ingredients=session.get('ingredients', []))
 
-    ingredients = session.get('ingredients'[])
-    return render_template('index.html', ingredients = ingredients)
 
 @app.route('/add_ingredient', methods=['POST'])
 def add_ingredient():
-    ingredient = request.form.get('Ingredient')
+    # ingredient = request.form.get('Ingredient')
 
-    #add the new ingedient to the session
-    if 'ingedients' not in session:
-        session['ingredients'] = []
+    # #add the new ingedient to the session
+    # if 'ingedients' not in session:
+    #     session['ingredients'] = []
 
-    session['ingredients'].append(ingredient)
+    # session['ingredients'].append(ingredient)
 
-    return redirect(url_for('index'))
+    # return redirect(url_for('index'))
+
+    pass
 
 @app.route('/recipes')
 

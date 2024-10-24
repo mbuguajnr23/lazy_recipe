@@ -1,4 +1,5 @@
 # Ignore virtual environment
-venv/
+myvenv/
+
 # Ignore environment variables file
 .env
