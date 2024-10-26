@@ -4,24 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Finder</title>
-    <link rel="stylesheet" href="{{url_for(
-        , filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="{{url_for('index')}}">Home</a></li>
-            <li><a href="{{url_for('recipes')}}">Recipes</a></li>
-            <li><a href="{{url_for('clear_ingredients')}}">Clear Ingredients</a></li>
-        </ul>
-    </nav>
 
-    <div class="container">
-        {% block content %}{% endblock %}
-    </div>
+<header>
+    <a href="{{ url_for('index') }}">Home</a> |
+    <a href="{{ url_for('recipes') }}">Recipes</a> |
+    <a href="{{ url_for('clear_ingredients') }}">Clear Ingredients</a>
+</header>
 
-    <footer>
-        <p>&copy; 2024 Recipe Finder | Powered by Spoonacular</p>
-    </footer>
+<div class="container">
+    {% block content %}{% endblock %}
+</div>
+
+<footer>
+    © 2024 Recipe Finder | Powered by Spoonacular
+</footer>
+
 </body>
 </html>

@@ -1,19 +1,18 @@
-{% extends 'layout.html%}
+{% extends 'layout.html' %}
 
 {% block content %}
     <h1>Find Recipes Based on Your Ingredients</h1>
     <form action="{{ url_for('add_ingredient') }}" method="POST">
-
-        <input type="text" name="Ingredients" placeholder="Add an ingredient..." required>
-        <button type="submit">Add Ingredients</button>
+        <input type="text" name="ingredient" placeholder="Add an ingredient..." required>
+        <button type="submit">Add Ingredient</button>
     </form>
 
     <h2>Your Ingredients</h2>
     <ul>
         {% for ingredient in ingredients %}
-        <li>{{ ingredient }}</li>
+            <li>{{ ingredient }}</li>
         {% endfor %}
     </ul>
 
-    <a href="{{url_for('recipes')}}" class="btn">Find Recipes</a>
-    {% endblock %}
+    <a href="{{ url_for('recipes') }}" class="btn">Find Recipes</a>
+{% endblock %}

@@ -1,11 +1,10 @@
 {% extends 'layout.html' %}
 
 {% block content %}
-    <h1>{{recipe.title}}</h1>
-    <img src="{{recipe.image}}" alt="{{recipe.title}}">
-
+    <h1>{{ recipe.title }}</h1>
+    <img src="{{ recipe.image }}" alt="{{ recipe.title }}">
+    
     <h2>Ingredients</h2>
-
     <ul>
         {% for ingredient in recipe.extendedIngredients %}
             <li>{{ ingredient.original }}</li>
@@ -13,9 +12,7 @@
     </ul>
 
     <h2>Instructions</h2>
-    <p>{{ recipe.instructions}}</p>
+    <p>{{ recipe.instructions }}</p>
 
-    <a href="{{ url_for('recipes')}}" class="btn"> Back to Recipes</a>
-
-
+    <a href="{{ url_for('recipes') }}" class="btn">Back to Recipes</a>
 {% endblock %}
